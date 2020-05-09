@@ -1,0 +1,144 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1829 ]
+[d frameptr 6 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"33 C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+[v _main main `(v  1 e 1 0 ]
+"45
+[v _init init `(v  1 e 1 0 ]
+"74
+[v _setPwm setPwm `(v  1 e 1 0 ]
+"429 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+"988
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+[s S144 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+"1029
+[s S152 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+[u S156 . 1 `S144 1 . 1 0 `S152 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES156  1 e 1 @28 ]
+"1185
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S71 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1200
+[u S78 . 1 `S71 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES78  1 e 1 @140 ]
+"1274
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S41 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 IRCF0 1 0 :1:3 
+`uc 1 IRCF1 1 0 :1:4 
+`uc 1 IRCF2 1 0 :1:5 
+`uc 1 IRCF3 1 0 :1:6 
+`uc 1 SPLLEN 1 0 :1:7 
+]
+"1788
+[s S50 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 IRCF 1 0 :4:3 
+]
+[u S54 . 1 `S41 1 . 1 0 `S50 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES54  1 e 1 @153 ]
+"1900
+[v _ADRES ADRES `VEus  1 e 2 @155 ]
+"1947
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+"2027
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2183
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2950
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+[s S88 . 1 `uc 1 ANSA0 1 0 :1:0 
+`uc 1 ANSA1 1 0 :1:1 
+`uc 1 ANSA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ANSA4 1 0 :1:4 
+]
+"2967
+[s S94 . 1 `uc 1 ANSELA 1 0 :5:0 
+]
+[u S96 . 1 `S88 1 . 1 0 `S94 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES96  1 e 1 @396 ]
+"5137
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @664 ]
+"5177
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @666 ]
+[s S176 . 1 `uc 1 CCP2M0 1 0 :1:0 
+`uc 1 CCP2M1 1 0 :1:1 
+`uc 1 CCP2M2 1 0 :1:2 
+`uc 1 CCP2M3 1 0 :1:3 
+`uc 1 DC2B0 1 0 :1:4 
+`uc 1 DC2B1 1 0 :1:5 
+`uc 1 P2M0 1 0 :1:6 
+`uc 1 P2M1 1 0 :1:7 
+]
+"5199
+[s S185 . 1 `uc 1 CCP2M 1 0 :4:0 
+`uc 1 DC2B 1 0 :2:4 
+`uc 1 P2M 1 0 :2:6 
+]
+[u S189 . 1 `S176 1 . 1 0 `S185 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES189  1 e 1 @666 ]
+[s S112 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+"5478
+[s S121 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+[u S126 . 1 `S112 1 . 1 0 `S121 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES126  1 e 1 @670 ]
+"7536
+[v _GO GO `VEb  1 e 0 @1257 ]
+"33 C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"43
+} 0
+"74
+[v _setPwm setPwm `(v  1 e 1 0 ]
+{
+[v setPwm@pwm pwm `i  1 p 2 0 ]
+"78
+} 0
+"45
+[v _init init `(v  1 e 1 0 ]
+{
+"72
+} 0
