@@ -22,24 +22,20 @@ __CONFIG(WRT_OFF & PLLEN_OFF & STVREN_OFF & LVP_OFF);
 //Valves
 #define VALVES PORTA 
 #define LEDS LATC //Debug module only
+#define ISBLOWING (ADRES >> 7) & 1
 
 #define TRUE 1
 
 void init(void);
 void setPwm(int);
+void setKey(void);
 
-const int KEYS[] = {}; //Lookup table for the trumpet keys
+const int KEYS[] = {64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024}; //Lookup table for the trumpet keys
 
 void main(void) {
     init();
     
-    while (TRUE) {
-        LEDS = ~VALVES;
-        __delay_us(5);                              //wait for ADC charging cap to settle
-        GO = 1;                                     //start the ADC conversion
-        while (GO) continue;                        //wait for conversion to be finished
-        setPwm(ADRES);
-    }
+    while (TRUE) setKey();
 }
 
 void init(void)
@@ -52,7 +48,8 @@ void init(void)
     //Microphone setup (ADC)
     TRISAbits.TRISA4 = 1;                           //Potentiometer is connected to RA4...set as input
     ANSELAbits.ANSA4 = 1;                           //analog
-    ADCON0 = 0b00001101;                            //select RA4 as source of ADC and enable the module (AN3)
+    ADCON0bits.CHS = 0b0000;                        //Select RA0 as source of ADC
+    ADCON0bits.ADON = 1;                            //Enable ADC
     ADCON1 = 0b00010000;                            //left justified - FOSC/8 speed - Vref is Vdd
 
     //Buzzer setup (PWM)
@@ -61,18 +58,30 @@ void init(void)
                                                     //PWM Period = [PR2 + 1]*4*Tosc*T2CKPS = [255 + 1] * 4 * (1 / 500KHz) * 1
     CCPTMRSbits.C2TSEL = 0b00;                      //select timer2 as PWM source
     T2CONbits.T2CKPS = 0b00;                        //1:1 prescaler
-    T2CONbits.TMR2ON = 1;                           //start the PWM
+    //T2CONbits.TMR2ON = 1;                           //start the PWM
 
     //Valves setup
     TRISC = 0;                                      //all LED pins are outputs
     LATC = 0;                                       //start with all LEDs OFF
     
-    TRISA = 0b1111;                           //switch as input
-    ANSELA = 0b0000;                           //digital switch
+    TRISA = 0b1111;                                 //switch as input
+    ANSELA = 0b0000;                                //digital switch
 }
 
 void setPwm(int pwm)
 {
     CCPR2L = pwm>>8;                            //put the top 8 MSbs into CCPR2L
     CCP2CONbits.DC2B = (pwm<<8>>6);             //put the 2 LSbs into DC2B register to complete the 10bit resolution
+}
+
+void setKey(void)
+{
+    while(ISBLOWING)
+    {
+        int valves = VALVES & 0b1111;                //get the 4 valves
+        int keys = KEYS[keys];                       //get the key correspondending with the 
+    
+        setPwm(keys);
+    }
+    setPwm(0);
 }

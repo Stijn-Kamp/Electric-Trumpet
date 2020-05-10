@@ -11,15 +11,17 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\stijn\AppData\Local\Temp\sgjk.o
+$C:\Users\stijn\AppData\Local\Temp\scmk.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 $dist/default/production\electric-trumpet.production.o
 cinit CODE 0 7FD 7FD 3 2
-text1 CODE 0 7BC 7BC 1A 2
-text2 CODE 0 7D6 7D6 27 2
-maintext CODE 0 7A5 7A5 17 2
-cstackCOMMON COMMON 1 70 70 7 1
+text1 CODE 0 7D0 7D0 2D 2
+text2 CODE 0 78F 78F 1A 2
+text3 CODE 0 7A9 7A9 27 2
+maintext CODE 0 786 786 9 2
+cstackCOMMON COMMON 1 70 70 D 1
+stringtext1 STRCODE 0 800 800 20 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -49,10 +51,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-7A4 2
-CONST 800-1FFF 2
-ENTRY 4-7A4 2
-ENTRY 800-1FFF 2
+CONST 4-785 2
+CONST 820-1FFF 2
+ENTRY 4-785 2
+ENTRY 820-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -77,8 +79,8 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-23EF 1
-CODE 4-7A4 2
-CODE 800-1FFF 2
+CODE 4-785 2
+CODE 820-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -93,13 +95,13 @@ BANK10 520-56F 1
 BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
-COMMON 77-7D 1
+COMMON 7D-7D 1
 CONFIG 8007-8008 2
 EEDATA F000-F0FF 2
-STRCODE 4-7A4 2
-STRCODE 800-1FFF 2
-STRING 4-7A4 2
-STRING 800-1FFF 2
+STRCODE 4-785 2
+STRCODE 820-1FFF 2
+STRING 4-785 2
+STRING 820-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -114,41 +116,45 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\electric-trumpet.production.o
-7FD cinit CODE >815:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7FD cinit CODE >818:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7FD cinit CODE >824:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7FD cinit CODE >826:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7FE cinit CODE >827:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7D6 text2 CODE >45:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7D6 text2 CODE >48:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7D8 text2 CODE >49:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7DC text2 CODE >50:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7DE text2 CODE >53:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7DF text2 CODE >54:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7E1 text2 CODE >55:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7E4 text2 CODE >56:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7E6 text2 CODE >59:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7E9 text2 CODE >60:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7EC text2 CODE >62:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7EF text2 CODE >63:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7F2 text2 CODE >64:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7F3 text2 CODE >67:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7F5 text2 CODE >68:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7F7 text2 CODE >70:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7FA text2 CODE >71:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7FC text2 CODE >72:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7BC text1 CODE >74:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7BC text1 CODE >76:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7BF text1 CODE >77:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7D5 text1 CODE >78:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7A5 maintext CODE >33:C:\Users\stijn\AppData\Local\Temp\sgjk.s
-7A5 maintext CODE >33:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7A5 maintext CODE >34:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7A8 maintext CODE >37:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7AC maintext CODE >38:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7AC maintext CODE >39:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7AE maintext CODE >40:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
-7B2 maintext CODE >41:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7FD cinit CODE >864:C:\Users\stijn\AppData\Local\Temp\scmk.s
+7FD cinit CODE >867:C:\Users\stijn\AppData\Local\Temp\scmk.s
+7FD cinit CODE >873:C:\Users\stijn\AppData\Local\Temp\scmk.s
+7FD cinit CODE >875:C:\Users\stijn\AppData\Local\Temp\scmk.s
+7FE cinit CODE >876:C:\Users\stijn\AppData\Local\Temp\scmk.s
+7A9 text3 CODE >41:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7A9 text3 CODE >44:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7AB text3 CODE >45:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7AF text3 CODE >46:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7B1 text3 CODE >49:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7B2 text3 CODE >50:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7B4 text3 CODE >51:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7B7 text3 CODE >52:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7B8 text3 CODE >53:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7BA text3 CODE >56:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7BD text3 CODE >57:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7C0 text3 CODE >59:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7C3 text3 CODE >60:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7C6 text3 CODE >64:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7C8 text3 CODE >65:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7CA text3 CODE >67:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7CD text3 CODE >68:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7CF text3 CODE >69:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+78F text2 CODE >71:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+78F text2 CODE >73:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+792 text2 CODE >74:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7A8 text2 CODE >75:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7D0 text1 CODE >77:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7D0 text1 CODE >79:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7D1 text1 CODE >81:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7D3 text1 CODE >82:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7E1 text1 CODE >84:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7E8 text1 CODE >79:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7F6 text1 CODE >86:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+7FC text1 CODE >87:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+786 maintext CODE >35:C:\Users\stijn\AppData\Local\Temp\scmk.s
+786 maintext CODE >35:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+786 maintext CODE >36:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
+789 maintext CODE >38:C:\Users\stijn\Documents\projects\microcontrollers\electric-trumpet\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -162,45 +168,45 @@ $dist/default/production\electric-trumpet.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-__Hspace_0 800 0 ABS 0 - -
-__Hspace_1 77 0 ABS 0 - -
+__Hspace_0 820 0 ABS 0 - -
+__Hspace_1 7D 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_GO 4E9 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __Hstrings 0 0 ABS 0 strings -
+_KEYS 1000 0 STRCODE 0 stringtext1 dist/default/production\electric-trumpet.production.o
 _LATC 10E 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-___sp 0 0 STACK 2 stack C:\Users\stijn\AppData\Local\Temp\sgjk.o
-_init FAC 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
-_main F4A 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
+___sp 0 0 STACK 2 stack C:\Users\stijn\AppData\Local\Temp\scmk.o
+_init F52 0 CODE 0 text3 dist/default/production\electric-trumpet.production.o
+_main F0C 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
 btemp 7E 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-start 4 0 CODE 0 init C:\Users\stijn\AppData\Local\Temp\sgjk.o
+start 4 0 CODE 0 init C:\Users\stijn\AppData\Local\Temp\scmk.o
 __size_of_init 0 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\sgjk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\stijn\AppData\Local\Temp\scmk.o
 _OSCCONbits 99 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-_ADCON0 9D 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 _ADCON1 9E 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 setPwm@pwm 70 0 COMMON 1 cstackCOMMON dist/default/production\electric-trumpet.production.o
 _CCPR2L 298 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 23EF 0 ABS 0 - C:\Users\stijn\AppData\Local\Temp\sgjk.o
-___stacklo 2000 0 ABS 0 - C:\Users\stijn\AppData\Local\Temp\sgjk.o
+___stackhi 23EF 0 ABS 0 - C:\Users\stijn\AppData\Local\Temp\scmk.o
+___stacklo 2000 0 ABS 0 - C:\Users\stijn\AppData\Local\Temp\scmk.o
 start_initialization FFA 0 CODE 0 cinit dist/default/production\electric-trumpet.production.o
 _CCPTMRSbits 29E 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 _TRISAbits 8C 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\stijn\AppData\Local\Temp\sgjk.o
-__end_of_setPwm FAC 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\stijn\AppData\Local\Temp\scmk.o
+__end_of_setKey FFA 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
+__end_of_setPwm F52 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -322,15 +328,15 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 0 0 STRCODE 0 stringtext1 dist/default/production\electric-trumpet.production.o
+__pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production\electric-trumpet.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _PR2 1B 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-__S0 800 0 ABS 0 - -
-__S1 77 0 ABS 0 - -
+__S0 820 0 ABS 0 - -
+__S1 7D 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\stijn\AppData\Local\Temp\sgjk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\stijn\AppData\Local\Temp\scmk.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
@@ -354,10 +360,12 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext F4A 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
+__pmaintext F0C 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
-_setPwm F78 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
+_setKey FA0 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
+_setPwm F1E 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
+_ADCON0bits 9D 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -368,9 +376,11 @@ end_of_initialization FFA 0 CODE 0 cinit dist/default/production\electric-trumpe
 __Hintentry 4 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
+__size_of_setKey 0 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 __size_of_setPwm 0 0 ABS 0 - dist/default/production\electric-trumpet.production.o
-__ptext1 F78 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
-__ptext2 FAC 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
+__ptext1 FA0 0 CODE 0 text1 dist/default/production\electric-trumpet.production.o
+__ptext2 F1E 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
+__ptext3 F52 0 CODE 0 text3 dist/default/production\electric-trumpet.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 nosup@@$_$_CONFIG 0 0 ABS 0 - dist/default/production\electric-trumpet.production.o
@@ -381,10 +391,11 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\electric-trumpet.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_KEYS 0 0 STRCODE 0 stringtext1 dist/default/production\electric-trumpet.production.o
-__end_of_init FFA 0 CODE 0 text2 dist/default/production\electric-trumpet.production.o
-__end_of_main F78 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
+__end_of_KEYS 1040 0 STRCODE 0 stringtext1 dist/default/production\electric-trumpet.production.o
+__end_of_init FA0 0 CODE 0 text3 dist/default/production\electric-trumpet.production.o
+__end_of_main F1E 0 CODE 0 maintext dist/default/production\electric-trumpet.production.o
 _CCP2CONbits 29A 0 ABS 0 - dist/default/production\electric-trumpet.production.o
+setKey@keys 7B 0 COMMON 1 cstackCOMMON dist/default/production\electric-trumpet.production.o
 _ADRES 9B 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 _PORTA C 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\electric-trumpet.production.o
@@ -421,10 +432,12 @@ _ANSELAbits 18C 0 ABS 0 - dist/default/production\electric-trumpet.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FD FFA 3 2
-text1 0 7BC F78 1A 2
-text2 0 7D6 FAC 27 2
-maintext 0 7A5 F4A 17 2
-cstackCOMMON 1 70 70 7 1
+text1 0 7D0 FA0 2D 2
+text2 0 78F F1E 1A 2
+text3 0 7A9 F52 27 2
+maintext 0 786 F0C 9 2
+cstackCOMMON 1 70 70 D 1
+stringtext1 0 800 1000 20 2
 reset_vec 0 0 0 4 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

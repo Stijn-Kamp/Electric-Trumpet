@@ -4470,22 +4470,17 @@ extern __bank0 __bit __timeout;
 
 __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
 __asm("GLOBAL nosup@@$_$_" "CONFIG" "\nnosup@@$_$_" "CONFIG" " SET 0");
-# 28 "main.c"
+# 29 "main.c"
 void init(void);
 void setPwm(int);
+void setKey(void);
 
-const int KEYS[] = {};
+const int KEYS[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 
 void main(void) {
     init();
 
-    while (1) {
-        LATC = ~PORTA;
-        _delay((unsigned long)((5)*(500000/4000000.0)));
-        GO = 1;
-        while (GO) continue;
-        setPwm(ADRES);
-    }
+    while (1) setKey();
 }
 
 void init(void)
@@ -4498,7 +4493,8 @@ void init(void)
 
     TRISAbits.TRISA4 = 1;
     ANSELAbits.ANSA4 = 1;
-    ADCON0 = 0b00001101;
+    ADCON0bits.CHS = 0b0000;
+    ADCON0bits.ADON = 1;
     ADCON1 = 0b00010000;
 
 
@@ -4507,7 +4503,7 @@ void init(void)
 
     CCPTMRSbits.C2TSEL = 0b00;
     T2CONbits.T2CKPS = 0b00;
-    T2CONbits.TMR2ON = 1;
+
 
 
     TRISC = 0;
@@ -4521,4 +4517,16 @@ void setPwm(int pwm)
 {
     CCPR2L = pwm>>8;
     CCP2CONbits.DC2B = (pwm<<8>>6);
+}
+
+void setKey(void)
+{
+    while((ADRES >> 7) & 1)
+    {
+        int valves = PORTA & 0b1111;
+        int keys = KEYS[keys];
+
+        setPwm(keys);
+    }
+    setPwm(0);
 }
